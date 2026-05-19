@@ -1,0 +1,122 @@
+                                                                            
+┌──(kali㉿kali)-[~/Documents]
+└─$ mkdir -p atributos_plus
+                                                                                                                  
+┌──(kali㉿kali)-[~/Documents]
+└─$ cd atributos_plus 
+                                                                             
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ touch dir1
+                                                                             
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ touch file1
+                                                                             
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ touch dir2 
+                                                                             
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ touch script.sh
+                                                                             
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ touch solo_lectura.txt
+                                                                             
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ touch editable.txt    
+                                                                            
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ ln -s file1 enlace 
+                                                                             
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ ls -l             
+total 0
+-rw-rw-r-- 1 kali kali 0 May 18 13:25 dir1
+-rw-rw-r-- 1 kali kali 0 May 18 13:25 dir2
+-rw-rw-r-- 1 kali kali 0 May 18 13:26 editable.txt
+lrwxrwxrwx 1 kali kali 5 May 18 13:52 enlace -> file1
+-rw-rw-r-- 1 kali kali 0 May 18 13:25 file1
+-rw-rw-r-- 1 kali kali 0 May 18 13:26 script.sh
+-rw-rw-r-- 1 kali kali 0 May 18 13:26 solo_lectura.txt
+                     
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ chmod 755 dir1
+                                                                             
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ ls -l         
+total 0
+-rwxr-xr-x 1 kali kali 0 May 18 13:25 dir1
+-rw-rw-r-- 1 kali kali 0 May 18 13:25 dir2
+-rw-rw-r-- 1 kali kali 0 May 18 13:26 editable.txt
+lrwxrwxrwx 1 kali kali 5 May 18 13:52 enlace -> file1
+-rw-rw-r-- 1 kali kali 0 May 18 13:25 file1
+-rw-rw-r-- 1 kali kali 0 May 18 13:26 script.sh
+-rw-rw-r-- 1 kali kali 0 May 18 13:26 solo_lectura.txt
+                                                                             
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ chmod 640 file1
+                                                                             
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ ls -l
+total 0
+-rwxr-xr-x 1 kali kali 0 May 18 13:25 dir1
+-rw-rw-r-- 1 kali kali 0 May 18 13:25 dir2
+-rw-rw-r-- 1 kali kali 0 May 18 13:26 editable.txt
+lrwxrwxrwx 1 kali kali 5 May 18 13:52 enlace -> file1
+-rw-r----- 1 kali kali 0 May 18 13:25 file1
+-rw-rw-r-- 1 kali kali 0 May 18 13:26 script.sh
+-rw-rw-r-- 1 kali kali 0 May 18 13:26 solo_lectura.txt
+                                                                             
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ chmod 711 dir2 
+                                                                             
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ ls -l
+total 0
+-rwxr-xr-x 1 kali kali 0 May 18 13:25 dir1
+-rwx--x--x 1 kali kali 0 May 18 13:25 dir2
+-rw-rw-r-- 1 kali kali 0 May 18 13:26 editable.txt
+lrwxrwxrwx 1 kali kali 5 May 18 13:52 enlace -> file1
+-rw-r----- 1 kali kali 0 May 18 13:25 file1
+-rw-rw-r-- 1 kali kali 0 May 18 13:26 script.sh
+-rw-rw-r-- 1 kali kali 0 May 18 13:26 solo_lectura.txt
+                                                                             
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ chmod 711 script.sh
+                                                                             
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ ls -l
+total 0
+-rwxr-xr-x 1 kali kali 0 May 18 13:25 dir1
+-rwx--x--x 1 kali kali 0 May 18 13:25 dir2
+-rw-rw-r-- 1 kali kali 0 May 18 13:26 editable.txt
+lrwxrwxrwx 1 kali kali 5 May 18 13:52 enlace -> file1
+-rw-r----- 1 kali kali 0 May 18 13:25 file1
+-rwx--x--x 1 kali kali 0 May 18 13:26 script.sh
+-rw-rw-r-- 1 kali kali 0 May 18 13:26 solo_lectura.txt
+                                                                             
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ chmod 444 solo_lectura.txt 
+                                                                             
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ ls -l
+total 0
+-rwxr-xr-x 1 kali kali 0 May 18 13:25 dir1
+-rwx--x--x 1 kali kali 0 May 18 13:25 dir2
+-rw-rw-r-- 1 kali kali 0 May 18 13:26 editable.txt
+lrwxrwxrwx 1 kali kali 5 May 18 13:52 enlace -> file1
+-rw-r----- 1 kali kali 0 May 18 13:25 file1
+-rwx--x--x 1 kali kali 0 May 18 13:26 script.sh
+-r--r--r-- 1 kali kali 0 May 18 13:26 solo_lectura.txt
+                                                                             
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ chmod 664 editable.txt
+                                                                             
+┌──(kali㉿kali)-[~/Documents/atributos_plus]
+└─$ ls -l
+total 0
+-rwxr-xr-x 1 kali kali 0 May 18 13:25 dir1
+-rwx--x--x 1 kali kali 0 May 18 13:25 dir2
+-rw-rw-r-- 1 kali kali 0 May 18 13:26 editable.txt
+lrwxrwxrwx 1 kali kali 5 May 18 13:52 enlace -> file1
+-rw-r----- 1 kali kali 0 May 18 13:25 file1
+-rwx--x--x 1 kali kali 0 May 18 13:26 script.sh
+-r--r--r-- 1 kali kali 0 May 18 13:26 solo_lectura.txt
